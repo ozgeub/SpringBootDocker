@@ -44,7 +44,7 @@ jobs:
           WELCOME: "ssh scp ssh pipelines"
           LASTSSH: "Doing something after copying"
         with:
-          host: 'ozgeuysalvodafo.simplilearnlabs.com'
+          host: 'ozgeuysalvodafosl0034.simplilearnlabs.com:'
           user: 'ozgeuysalvodafo'
           pass: 'vodafo0A@hjnzu'
           port: 42006
