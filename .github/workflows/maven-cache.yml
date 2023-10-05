@@ -38,4 +38,22 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.appName }}:latest
-
+      - name: Deploy with ssh
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        env:
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
+        with:
+          host: 'ozgeuysalvodafo.simplilearnlabs.com'
+          user: 'ozgeuysalvodafo'
+          pass: 'vodafo0A@hjnzu'
+          port: 42006
+          connect_timeout: 10s
+          first_ssh: |
+            rm -rf /tmp/Docker
+            mkdir -p /tmp/Docker
+          scp: |
+            'k8smanifests/' => /tmp/Docker/
+          last_ssh: |
+            cd /tmp/Docker/
+            sudo kubectl apply -f .
