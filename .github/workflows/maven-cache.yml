@@ -47,7 +47,7 @@ jobs:
           host: 'ozgeuysalvodafosl0034.simplilearnlabs.com:'
           user: 'ozgeuysalvodafo'
           pass: 'vodafo0A@hjnzu'
-          port: 42001
+          port: 42006
           connect_timeout: 10s
           first_ssh: |
             rm -rf /tmp/Docker
