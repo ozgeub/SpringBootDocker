@@ -1,4 +1,4 @@
-name: Docker Image Build 
+name: Docker image Build Process
 
 on:
   workflow_dispatch:
@@ -38,13 +38,13 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.appName }}:latest
-      - name: Deploy with ssh
+      - name: Deploy Application using SSH
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         env:
           WELCOME: "ssh scp ssh pipelines"
           LASTSSH: "Doing something after copying"
         with:
-          host: 'ozgeuysalvodafosl0034.simplilearnlabs.com:'
+          host: 'ozgeuysalvodafosl0034.simplilearnlabs.com'
           user: 'ozgeuysalvodafo'
           pass: 'vodafo0A@hjnzu'
           port: 42006
