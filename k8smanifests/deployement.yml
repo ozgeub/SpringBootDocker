@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Ozge
+  labels:
+    product: actimize
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Ozge
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: Ozge
+        tier: web
+    spec:
+      containers:
+      - name: springboot-image-container
+        image: Ozgecetin/springboot-image
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:  
+            cpu: 1000m
+            memory: 600Mi             
+          requests: 
+            cpu: 500m
+            memory: 300Mi
