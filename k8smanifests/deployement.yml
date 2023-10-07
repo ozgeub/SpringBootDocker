@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Ozge
+  name: ouysalb
   labels:
     product: actimize
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Ozge
+      app: ouysalb
       tier: web
   template:
     metadata:
       labels:
-        app: Ozge
+        app: ouysalb
         tier: web
     spec:
       containers:
       - name: springboot-image-container
-        image: Ozgecetin/springboot-image
+        image: ouysalb/springboot-image
         ports:
         - containerPort: 8080
         resources:
